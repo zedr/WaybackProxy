@@ -32,7 +32,7 @@ class Handler(socketserver.BaseRequestHandler):
 		"""Handle a request."""
 
 		# readline is pretty convenient
-		f = self.request.makefile()
+		f = self.request.makefile(errors="ignore")
 		
 		# read request line
 		reqline = line = f.readline()
